@@ -1,16 +1,22 @@
 using UnityEngine;
 
-public class Singleton : MonoBehaviour
-{
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
+{
+	[SerializeField] protected bool doNotDestroy = true;
+
+
+
+	protected virtual void Awake()
+	{
+		CheckDontDestroyOnLoad();
+	}
+
+	private void CheckDontDestroyOnLoad()
+	{
+		if (doNotDestroy)
+		{
+			GameObject.DontDestroyOnLoad(gameObject);
+		}
+	}
 }

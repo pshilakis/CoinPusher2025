@@ -1,16 +1,10 @@
 using UnityEngine;
 
-public class PhysicsObject : MonoBehaviour
+namespace PGS
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+	public class PhysicsObject : MonoBehaviour
+	{
+		protected SerializeableTransform prs;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	}
 }
